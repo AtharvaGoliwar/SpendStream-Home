@@ -1,44 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
   /* background: #06050ff0; */
   background-image: url(bg2.png);
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
-  content: flex;
-  align-items: center;
-  
-}
-.wrapper{
-  width: 380px;
-  padding: 2rem 2rem 1rem 1rem;
-  margin: 70px auto;
-  background: linear-gradient(90deg,#12192C, #062a6e);
-  border-radius: 10px;
-  text-align: center;
-  border-width:40px;
-  border-color: rgb(3, 4, 43);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  display: flex; /* Use flexbox to align content vertically */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
 }
 
-h1{
+.wrapper {
+  width: 380px;
+  padding: 2rem 2rem 1rem 1rem;
+  background: linear-gradient(90deg, #12192C, #062a6e);
+  border-radius: 10px;
+  text-align: center;
+  border-width: 40px;
+  border-color: rgb(3, 4, 43);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* Set minimum width to prevent resizing */
+  max-width: 500px; /* Set maximum width to prevent resizing */
+  flex-shrink: 0; /* Prevent flex item from shrinking */
+}
+
+h1 {
   font-size: 2rem;
   color: #ffffff;
 }
 
-p{
+p {
   margin-bottom: 1.7rem;
   font-size: 0.8rem;
   color: #ffffff;
 }
 
-form input{
+form input {
   width: 85%;
   outline: none;
   border: none;
@@ -47,16 +51,19 @@ form input{
   margin-bottom: 10px;
   border-radius: 10px;
 }
-.recover{
+
+.recover {
   text-align: right;
   font-size: 0.8rem;
   margin: 0.2rem 1.7rem 0 0;
 }
-.recover a{
+
+.recover a {
   text-decoration: none;
   color: rgb(224, 167, 167);
 }
-button{
+
+button {
   font-size: 1.1rem;
   margin-top: 1rem;
   padding: 8px 0;
@@ -68,14 +75,17 @@ button{
   color: #fff;
   cursor: pointer;
 }
-button:hover{
+
+button:hover {
   background: rgba(122, 30, 30, 0.767);
 }
-.or{
+
+.or {
   font-size: 0.8rem;
   margin-top: 1.5rem;
 }
-.icons i{
+
+.icons i {
   color: #07001f;
   padding: 00.8rem 1.5rem;
   border-radius: 10px;
@@ -84,26 +94,32 @@ button:hover{
   cursor: pointer;
   border: 2px solid #dfe9f5;
 }
-.icons i:hover{
+
+.icons i:hover {
   color: #fff !important;
   background: #07001f;
   transition: 1s;
 }
-.icons i:first-child{
+
+.icons i:first-child {
   color: green;
 }
-.icons i:last-child{
+
+.icons i:last-child {
   color: blue;
 }
-.not-member{
+
+.not-member {
   font-size: 0.8rem;
   margin-top: 1.4rem;
   color: rgb(255, 255, 255);
 }
-.not-member a{
+
+.not-member a {
   color: rgb(224, 167, 167);
   text-decoration: none;
 }
-a:hover{
+
+a:hover {
   text-decoration: underline;
 }
