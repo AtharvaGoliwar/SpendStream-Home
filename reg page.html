@@ -1,0 +1,74 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Cool Login form | By Code Info</title>
+      <link rel="stylesheet" href="style.css">
+       <!-- Font Awesome Cdn Link -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> 
+      </head>
+    <body>
+      <div class="wrapper">
+        <h1>Sign in Here!</h1>
+        <p class="dets"> Please enter correct details <br> to create an account </p>
+        <form onsubmit="return handleClick()">
+          <input id ="name" type="text" placeholder="Enter full name">
+          <input id ="username" type="text" placeholder="Enter username">
+          <input id ="pin" type="password" placeholder="Create pin" length="4" minlength="4" maxlength="4">
+          <input id ="cnfpin"  type="password" placeholder="Confirm pin" length="4"  minlength="4" maxlength="4">
+          <input id ="no"  type="number" placeholder="Enter phone no." length="10" >
+          <input id ="email" type="email" placeholder="Enter email">
+          <input id ="date" type="date" placeholder="D.O.B">
+          <input id ="bb" type="number" placeholder="Enter initial bank balance">
+          <button>Sign in</button>
+
+        </form>
+        <p class="or">
+          ----- or continue with -----
+        </p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <!-- <i class="fab fa-github"></i> -->
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="not-member">
+          Already a member? <a href="login page.html">Login Now</a>
+        </div>
+      </div>
+
+      <script>
+        function handleClick() {
+        let name  = document.getElementById("name").value
+        let no = document.getElementById("no").value
+        let username = document.getElementById("username").value
+        let date = document.getElementById("date").value
+        let email = document.getElementById("email").value
+        let pin = document.getElementById("pin").value
+        let cnfpin = document.getElementById("cnfpin").value
+        let bb = document.getElementById("bb").value
+        
+        const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (name === '' || username === '' || no === '' || pin === "" || cnfpin === '' ||bb === ''||email === ''||date === '' ) {
+          alert("Enter all fields")
+        return false
+        }
+        if (!emailRegex.test(email)) {
+          alert("Enter valid email id")
+        return false
+        }
+        no = parseInt(no)
+        if (no === null && no.lenght!==10) {
+          alert("Enter a valid number")
+        return false
+        }
+        
+        if(pin!==cnfpin){
+          alert("You have entered 2 different pin")
+          return false
+        }
+        return true
+        }
+        </script>
+    </body>
+    </html>
+    </span>

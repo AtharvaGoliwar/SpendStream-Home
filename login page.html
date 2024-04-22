@@ -1,0 +1,52 @@
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Cool Login form | By Code Info</title>
+      <link rel="stylesheet" href="style.css">
+       <!-- Font Awesome Cdn Link -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> 
+      </head>
+    <body>
+      <div class="wrapper">
+        <h1>Login Here!</h1>
+        <p class="dets"> Welcome back to your own <br> Finance Tracker</p>
+        <form onsubmit="return handleClick()">
+          <input type="text" id="username" placeholder="Enter username">
+          <input type="password" id="pin"  placeholder="Enter Pin">
+          <p class="recover">
+            <a href="#">Forgot Password?</a>
+          </p>
+          <button>Sign in</button>
+        </form>
+        <p class="or">
+          ----- or continue with -----
+        </p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <!-- <i class="fab fa-github"></i> -->
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="not-member">
+          Not a member? <a href="reg page.html">Register Now</a>
+        </div>
+      </div>
+      <script>
+        function handleClick() {
+        let username = document.getElementById("username").value
+        let pin = document.getElementById("pin").value
+        if (username === '' || pin === "") {
+          alert("Enter all fields")
+        return false
+        }
+        
+        if(pin!=="1234"){
+          alert("You have entered 2 different pin")
+          return false
+        }
+        return true
+        }
+      </script>
+    </body>
+    </html>
+    </span>
