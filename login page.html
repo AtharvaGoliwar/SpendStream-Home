@@ -3,6 +3,7 @@
     <head>
       <meta charset="UTF-8">
       <title>Cool Login form | By Code Info</title>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
       <link rel="stylesheet" href="style.css">
        <!-- Font Awesome Cdn Link -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> 
@@ -13,7 +14,7 @@
         <p class="dets"> Welcome back to your own <br> Finance Tracker</p>
         <form onsubmit="return handleClick()">
           <input type="text" id="username" placeholder="Enter username">
-          <input type="password" id="pin"  placeholder="Enter Pin">
+          <input type="password" id="pin"  placeholder="Enter Pin" maxlength="4" minlength="4">
           <p class="recover">
             <a href="#">Forgot Password?</a>
           </p>
@@ -36,17 +37,30 @@
         let username = document.getElementById("username").value
         let pin = document.getElementById("pin").value
         if (username === '' || pin === "") {
-          alert("Enter all fields")
+          Toastify({
+            text: "Enter all Fields",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
         return false
         }
         
         if(pin!=="1234"){
-          alert("You have entered 2 different pin")
+          Toastify({
+            text: "Enter correct pin",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
           return false
         }
         return true
         }
       </script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     </body>
     </html>
     </span>
