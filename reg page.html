@@ -19,7 +19,7 @@
           <input id ="no"  type="number" placeholder="Enter phone no." length="10" >
           <input id ="email" type="email" placeholder="Enter email">
           <input id ="date" type="date" placeholder="D.O.B">
-          <input id ="bb" type="number" placeholder="Enter initial bank balance">
+          <!-- <input id ="bb" type="number" placeholder="Enter initial bank balance"> -->
           <button>Sign in</button>
 
         </form>
@@ -45,7 +45,7 @@
         let email = document.getElementById("email").value
         let pin = document.getElementById("pin").value
         let cnfpin = document.getElementById("cnfpin").value
-        let bb = document.getElementById("bb").value
+        // let bb = document.getElementById("bb").value
         
         const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         if (name === '' || username === '' || no === '' || pin === "" || cnfpin === '' ||bb === ''||email === ''||date === '' ) {
