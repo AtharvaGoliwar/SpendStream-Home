@@ -84,9 +84,16 @@
         //   return false
         // }
         if(localStorage.getItem("username")!==username || localStorage.getItem("pin")!==pin){
+          Toastify({
+            text: "Enter details correctly",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
           return false
         }
-        window.open(`https://spend-stream.vercel.app/?id=${username}`,"_blank")
+        window.open(`https://spend-stream.vercel.app/?user=${username}&bb=${localStorage.getItem("bb")}&gold=${localStorage.getItem("gold")}&ware=${localStorage.getItem("ware")}&stock=${localStorage.getItem("stock")}&land=${localStorage.getItem("land")}&saving=${localStorage.getItem("saving")}`,"_blank")
         return true
         }
       </script>

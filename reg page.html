@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <title>Cool Login form | By Code Info</title>
       <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
        <!-- Font Awesome Cdn Link -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> 
       </head>
@@ -19,7 +20,18 @@
           <input id ="no"  type="number" placeholder="Enter phone no." maxlength="10" >
           <input id ="email" type="email" placeholder="Enter email">
           <input id ="date" type="date" placeholder="D.O.B">
-          <!-- <input id ="bb" type="number" placeholder="Enter initial bank balance"> -->
+          <input id ="bb" type="number" placeholder="Enter initial bank balance">
+          <div style="color: white;">Assets:</div><br>
+          <div>
+            <input id ="gold" type="number" placeholder="Enter initial Gold Asset">
+            <input id ="warehouse" type="number" placeholder="Enter initial Warehouse Asset">
+          </div>
+          <div>
+            <input id ="stock" type="number" placeholder="Enter initial Stock Asset">
+            <input id ="land" type="number" placeholder="Enter initial Land Asset">
+            <input id ="saving" type="number" placeholder="Enter Monthly Savings Goal">
+          </div>
+
           <button>Sign in</button>
 
         </form>
@@ -45,10 +57,15 @@
         let email = document.getElementById("email").value
         let pin = document.getElementById("pin").value
         let cnfpin = document.getElementById("cnfpin").value
-        // let bb = document.getElementById("bb").value
+        let bb = document.getElementById("bb").value
+        let gold = document.getElementById("gold").value
+        let ware = document.getElementById("warehouse").value
+        let stock = document.getElementById("stock").value
+        let land = document.getElementById("land").value
+        let saving = document.getElementById("saving").value
         
         const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (name === '' || username === '' || no === '' || pin === "" || cnfpin === '' ||email === ''||date === '' ) {
+        if (name === '' || username === '' ||saving===''|| no === '' || pin === "" || cnfpin === '' ||email === ''||date === ''||bb==='' || gold===''|| ware==''|| land===''|| stock==='') {
           Toastify({
             text: "Enter all Fields",
             className: "info",
@@ -91,9 +108,18 @@
         }
         localStorage.setItem("username",username)
         localStorage.setItem("pin",pin)
+        localStorage.setItem("bb",bb)
+        localStorage.setItem("gold",gold)
+        localStorage.setItem("ware",ware)
+        localStorage.setItem("stock",stock)
+        localStorage.setItem("land",land)
+        localStorage.setItem("saving",saving)
+
+        window.open("/login page.html")
         return true
         }
         </script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     </body>
     </html>
     </span>
