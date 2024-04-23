@@ -33,6 +33,14 @@
         </div>
       </div>
       <script>
+        // let flag=0
+        // let rec = []
+        // function openAccount(x,y){
+        //   fetch(`https://sheetdb.io/api/v1/3wkw3k2a9luuj/search?username=${x}&pin=${y}`)
+        //   .then((response) => response.json())
+        //   .then((data) => (data.length?flag=1:flag=0));
+          
+        // }
         function handleClick() {
         let username = document.getElementById("username").value
         let pin = document.getElementById("pin").value
@@ -47,14 +55,35 @@
         return false
         }
         
-        if(pin!=="1234"){
-          Toastify({
-            text: "Enter correct pin",
-            className: "info",
-            style:{background:"white",color:"red",borderRadius:"10px"},
-            position:"center",
+        // if(pin!=="1234"){
+        //   Toastify({
+        //     text: "Enter correct pin",
+        //     className: "info",
+        //     style:{background:"white",color:"red",borderRadius:"10px"},
+        //     position:"center",
             
-            }).showToast();
+        //     }).showToast();
+        //   return false
+        // }
+
+        // if(localStorage.getItem("pin")===pin && localStorage.getItem("username")===username){
+        //   return true
+        // }
+        // alert("hello")
+        // openAccount(username,pin)
+        
+        // let rec = JSON.parse(localStorage.getItem("check"))
+        // if(flag===0){
+        //   Toastify({
+        //     text: "Enter Fields Properly",
+        //     className: "info",
+        //     style:{background:"white",color:"red",borderRadius:"10px"},
+        //     position:"center",
+            
+        //     }).showToast();
+        //   return false
+        // }
+        if(localStorage.getItem("username")!==username || localStorage.getItem("pin")!==pin){
           return false
         }
         return true

@@ -16,7 +16,7 @@
           <input id ="username" type="text" placeholder="Enter username">
           <input id ="pin" type="password" placeholder="Create pin" length="4" minlength="4" maxlength="4">
           <input id ="cnfpin"  type="password" placeholder="Confirm pin" length="4"  minlength="4" maxlength="4">
-          <input id ="no"  type="number" placeholder="Enter phone no." length="10" >
+          <input id ="no"  type="number" placeholder="Enter phone no." maxlength="10" >
           <input id ="email" type="email" placeholder="Enter email">
           <input id ="date" type="date" placeholder="D.O.B">
           <!-- <input id ="bb" type="number" placeholder="Enter initial bank balance"> -->
@@ -48,24 +48,49 @@
         // let bb = document.getElementById("bb").value
         
         const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (name === '' || username === '' || no === '' || pin === "" || cnfpin === '' ||bb === ''||email === ''||date === '' ) {
-          alert("Enter all fields")
-        return false
+        if (name === '' || username === '' || no === '' || pin === "" || cnfpin === '' ||email === ''||date === '' ) {
+          Toastify({
+            text: "Enter all Fields",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
+          return false
         }
         if (!emailRegex.test(email)) {
-          alert("Enter valid email id")
-        return false
+          Toastify({
+            text: "Enter valid email ID",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
+          return false
         }
-        no = parseInt(no)
-        if (no === null && no.lenght!==10) {
-          alert("Enter a valid number")
-        return false
+        if (no.length!==10) {
+          Toastify({
+            text: "Enter valid Phone Number",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
+          return false
         }
         
         if(pin!==cnfpin){
-          alert("You have entered 2 different pin")
+          Toastify({
+            text: "Enter right PIN",
+            className: "info",
+            style:{background:"white",color:"red",borderRadius:"10px"},
+            position:"center",
+            
+            }).showToast();
           return false
         }
+        localStorage.setItem("username",username)
+        localStorage.setItem("pin",pin)
         return true
         }
         </script>
