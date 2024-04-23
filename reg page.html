@@ -30,6 +30,7 @@
             <input id ="stock" type="number" placeholder="Enter initial Stock Asset">
             <input id ="land" type="number" placeholder="Enter initial Land Asset">
             <input id ="saving" type="number" placeholder="Enter Monthly Savings Goal">
+            <input id ="income" type="number" placeholder="Enter Monthly Income Goal">
           </div>
 
           <button>Sign in</button>
@@ -63,9 +64,10 @@
         let stock = document.getElementById("stock").value
         let land = document.getElementById("land").value
         let saving = document.getElementById("saving").value
+        let income = document.getElementById("income").value
         
         const emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (name === '' || username === '' ||saving===''|| no === '' || pin === "" || cnfpin === '' ||email === ''||date === ''||bb==='' || gold===''|| ware==''|| land===''|| stock==='') {
+        if (name === '' || username === '' || income === ''|| saving===''|| no === '' || pin === "" || cnfpin === '' ||email === ''||date === ''||bb==='' || gold===''|| ware==''|| land===''|| stock==='') {
           Toastify({
             text: "Enter all Fields",
             className: "info",
@@ -114,6 +116,7 @@
         localStorage.setItem("stock",stock)
         localStorage.setItem("land",land)
         localStorage.setItem("saving",saving)
+        localStorage.setItem("income",income)
 
         window.open("/login page.html")
         return true
